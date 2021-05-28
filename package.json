@@ -1,6 +1,6 @@
 {
   "name": "ddb-calc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Calculate the size of DynamoDB item in DynamoDB JSON",
   "main": "index.js",
   "scripts": {
