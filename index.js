@@ -3,8 +3,8 @@ const Decimal = require('decimal.js')
 const { marshall } = require("@aws-sdk/util-dynamodb");
 
 
-var NESTED_OVERHEAD = 1;
-var MAP_LIST_OVERHEAD = 3;
+const NESTED_OVERHEAD = 1;
+const MAP_LIST_OVERHEAD = 3;
 
 function sizeInBytes(item) {
     // If Empty Return 0
@@ -164,7 +164,6 @@ function zeros(n, left, right) {
 }
 
 exports.CalculateSize = (item) => {
-    console.log(item)
     var size = sizeInBytes(item);
     var rcus = Math.ceil(size / 4096);
     var wcus = Math.ceil(size / 1024);
