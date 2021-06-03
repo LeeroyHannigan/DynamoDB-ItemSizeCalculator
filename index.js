@@ -163,7 +163,18 @@ function zeros(n, left, right) {
     return n;
 }
 
-exports.CalculateSize = (item) => {
+exports.CalculateSize = (item, json) => {
+
+    // Convert JSON to DDB-JSON
+    if(json){
+        try {
+            item = marshall(item);
+        } catch (err) {
+            throw "Unable to marshall item.", err;
+        }
+    }
+    
+
     var size = sizeInBytes(item);
     var rcus = Math.ceil(size / 4096);
     var wcus = Math.ceil(size / 1024);
@@ -175,26 +186,18 @@ exports.CalculateSize = (item) => {
     return res;
 }
 
-exports.CalculateSizeJson = (item) => {
-    try {
-        item = marshall(item);
-        return this.CalculateSize(item);
-    } catch (err) {
-        throw "Unable to marshall item.", err;
-    }
-}
 
-exports.IsUnderLimit = (item) => {
+
+exports.IsUnderLimit = (item, json) => {
+
+    if(json){
+        try{
+            item = marshall(item)
+        }catch(err){
+            throw "Unable to marshall item.", err;
+        }
+    }
+
     const res = this.CalculateSize(item);
     return res.size < 400000
-}
-
-exports.IsUnderLimitJson = (item) => {
-    try {
-        item = marshall(item);
-        const res = this.CalculateSize(item);
-        return res.size < 400000
-    } catch (err) {
-        throw "Unable to marshall item.", err;
-    }
 }

@@ -27,39 +27,38 @@ const CALC = require('ddb-calc')
 ### **Sample DynamoDB JSON item**
 ```
 const item = {
-                "Id": {
-                    "N": "101"
-                },
-                "Title": {
-                    "S": "Book 101 Title"
-                },
-                "ISBN": {
-                    "S": "111-1111111111"
-                },
-                "Authors": {
-                    "L": [
-                        {
-                            "S": "Author1"
-                        }
-                    ]
-                },
-                "Price": {
-                    "N": "2"
-                },
-                "Dimensions": {
-                    "S": "8.5 x 11.0 x 0.5"
-                },
-                "PageCount": {
-                    "N": "500"
-                },
-                "InPublication": {
-                    "BOOL": true
-                },
-                "ProductCategory": {
-                    "S": "Book"
+        "Id": {
+            "N": "101"
+        },
+        "Title": {
+            "S": "Book 101 Title"
+        },
+        "ISBN": {
+            "S": "111-1111111111"
+        },
+        "Authors": {
+            "L": [
+                {
+                    "S": "Author1"
                 }
-            }
+            ]
+        },
+        "Price": {
+            "N": "2"
+        },
+        "Dimensions": {
+            "S": "8.5 x 11.0 x 0.5"
+        },
+        "PageCount": {
+            "N": "500"
+        },
+        "InPublication": {
+            "BOOL": true
+        },
+        "ProductCategory": {
+            "S": "Book"
         }
+    }
 
 ```
 
