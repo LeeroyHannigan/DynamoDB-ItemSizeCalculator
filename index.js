@@ -174,7 +174,6 @@ exports.CalculateSize = (item, json) => {
         }
     }
     
-
     var size = sizeInBytes(item);
     var rcus = Math.ceil(size / 4096);
     var wcus = Math.ceil(size / 1024);
