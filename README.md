@@ -102,8 +102,6 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 Lee Hannigan – [@leeroyhannigan](https://twitter.com/leeroyhannigan) – leeroy.hannigan@gmail.com
 
-Distributed under the ISC license. See ``LICENSE`` for more information.
-
 [https://github.com/leeroyhannigan/DynamoDB-ItemSizeCalculator](https://github.com/leeroyhannigan/)
 
 ## Contributing
