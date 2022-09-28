@@ -86,7 +86,8 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 
 ## Release History
-
+* 0.0.4
+    * Alter: Native JSON now supported by bool value: `CalculateSizeJson(item, true)`
 * 0.0.3
     * ADD: Added native JSON functions `CalculateSizeJson()` and `IsUnderLimitJson()`
 * 0.0.2

@@ -2,7 +2,7 @@
   "name": "ddb-calc",
   "version": "1.0.4",
   "description": "Calculate the size of DynamoDB item in DynamoDB JSON",
-  "main": "index.js",
+  "main": "index.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
