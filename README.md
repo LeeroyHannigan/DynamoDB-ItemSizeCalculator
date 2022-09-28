@@ -6,6 +6,9 @@
 
 Utility tool to gain item size information for DynamoDB JSON items to understand capacity consumption and ensure items are under the 400KB DynamoDB limit.
 
+DynamoDB SDK's can cater for both DDB-JSON or Native JSON. This package can be used to calculate both. By default it uses DDB-JSON but you can alter the methods to take Native JSON by passing a bool `true` value as a parameter to the method:
+`CalculateSize(item, true)`
+
 ![](https://www.cdata.com/blog/articles/20191018-dynamodb-performance-0.png)
 
 ## Installation
@@ -84,6 +87,43 @@ true
 _For more examples and usage, please refer to the [Wiki][wiki]._
 
 
+### **Sample Native JSON item**
+```
+const item = {
+    "Id": 101,
+    "Title": "Book 101 Title",
+    "ISBN": "111-1111111111",
+    "Authors": [
+        "Author1"
+    ],
+    "Price": 2,
+    "Dimensions": "8.5 x 11.0 x 0.5",
+    "PageCount": 500,
+    "InPublication": true,
+    "ProductCategory": "Book"
+}
+```
+
+### **Calculate Size**
+```
+const size =  CALC.CalculateSize(item, true);
+```
+
+```
+{ 
+    rcu: 1, 
+    wcu: 1, 
+    size: 137 
+}
+```
+
+### **Understand if an item is under the 400Kb limit**
+```
+const isValid = CALC.IsUnderLimit(item, true);
+```
+```
+true
+```
 
 ## Release History
 * 0.0.4
